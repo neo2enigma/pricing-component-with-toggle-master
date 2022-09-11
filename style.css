@@ -31,7 +31,7 @@ body {
 }
 
 body {
-    line-height: 1.5;
+    /* line-height: 1.5; */
     -webkit-font-smoothing: antialiased;
     background-color: hsl(240, 78%, 98%);
     font-size: 15px;
@@ -51,7 +51,9 @@ button,
 textarea,
 select {
     font: inherit;
-
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
 p,
@@ -65,10 +67,6 @@ h6 {
     text-align: center;
 }
 
-span {
-    /* margin: auto; */
-}
-
 #root,
 #__next {
     isolation: isolate;
@@ -79,69 +77,134 @@ Styles
 */
 
 
-body {
+.container {
     background-image:
+        url('./images/bg-top.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    overflow: hidden;
+}
+
+body {
+    line-height: 28px;
+    /* background-image:
         url('./images/bg-top.svg'),
         url('./images/bg-bottom.svg');
     background-repeat: no-repeat;
     background-position: top right, left bottom;
-    background-size: auto;
+    background-size: auto; */
 }
 
+hr {
+    border: 1px solid hsla(233, 13%, 49%, .25);
+    margin: 12px 0;
+}
+
+h1 {
+    line-height: 39px;
+}
 
 h1,
 h3,
 p,
 span {
-    color: hsl(233, 13%, 49%);
+    color: hsla(233, 13%, 49%, 1);
 }
 
 h2 {
     color: hsl(232, 13%, 33%);
+    font-size: 72px;
+    line-height: 71px;
+    letter-spacing: -2.16px;
 }
 
-h3 {
-    line-height: 28px;
-}
+
 
 main {
     width: 375px;
-    /* height: 500px; */
+    height: 1750px;
     margin-top: 0;
     margin: auto;
-    border: 1px solid pink;
+
 }
 
 header {
     margin: 64px 68px 0;
     width: 239px;
+}
+
+header>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.switch {
     position: relative;
+    width: 56px;
+    height: 32px;
+    float: right;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 
-header div span:nth-child(2) {
-    margin: auto;
-}
-
-header div span:last-child {
+.slider {
     position: absolute;
+    cursor: pointer;
+    display: block;
+    width: 56px;
+    height: 32px;
+    top: 0;
+    left: 0;
     right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    background-image: linear-gradient(-180deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
 }
+
+.slider::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 4px;
+    right: 4px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(-26px);
+    -ms-transform: translateX(-26px);
+    transform: translateX(-26px);
+}
+
+
+
 
 
 .cards {
-    border: 2px dotted red;
     display: flex;
     flex-flow: row wrap;
-    width: 326px;
+    width: 327px;
     justify-content: center;
     align-items: center;
-    margin: 80px 24px auto;
+    margin: 80px 24px 71px;
 }
 
 .card {
-    border: 1px solid blue;
-    width: 326px;
+    width: 327px;
     height: 453px;
     padding: 31px 29px;
     background-color: white;
@@ -152,11 +215,70 @@ header div span:last-child {
 }
 
 .card:nth-child(2) {
-    background-color: unset;
     background-image: linear-gradient(-180deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
     margin-top: 32px;
     margin-bottom: 32px;
 }
+
+
+
+.card:nth-child(2) p,
+.card:nth-child(2) h3,
+.card:nth-child(2) h2 {
+    color: white;
+}
+
+
+.card:nth-child(2) hr {
+    border: 1px solid hsla(0, 0%, 100%, .25);
+
+}
+
+.price {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 22px;
+    gap: 7.5px;
+}
+
+
+.price>h2:first-child {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: -1.2px;
+
+}
+
+.card>div {
+    width: 269px;
+}
+
+.card input {
+    appearance: none;
+    margin: 22px auto 0px;
+    width: 269px;
+    height: 44px;
+    border-radius: 6px;
+    border: 0;
+    background-image: linear-gradient(-180deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: white;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 1.4px;
+}
+
+
+
+.card:nth-child(2) input {
+    color: hsl(237, 63%, 64%);
+    background-image: unset;
+    background-color: white;
+}
+
 
 .attribution {
     position: absolute;
