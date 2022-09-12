@@ -80,22 +80,15 @@ button {
     cursor: pointer;
 }
 
-.container {
+
+body {
+    line-height: 28px;
     background-image:
         url('./images/bg-top.svg');
     background-repeat: no-repeat;
     background-position: top right;
+    background-size: auto;
     overflow: hidden;
-}
-
-body {
-    line-height: 28px;
-    /* background-image:
-        url('./images/bg-top.svg'),
-        url('./images/bg-bottom.svg');
-    background-repeat: no-repeat;
-    background-position: top right, left bottom;
-    background-size: auto; */
 }
 
 hr {
@@ -128,7 +121,30 @@ main {
     height: 1750px;
     margin-top: 0;
     margin: auto;
+    animation: fade .5s ease-in;
+    opacity: 1;
+}
 
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: .25;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    75% {
+        opacity: .75;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 header {
@@ -187,13 +203,11 @@ header>div {
 
 
 
-input:checked+.slider:before {
+.switch input:checked+.slider:before {
     -webkit-transform: translateX(-26px);
     -ms-transform: translateX(-26px);
     transform: translateX(-26px);
 }
-
-
 
 
 
@@ -204,7 +218,10 @@ input:checked+.slider:before {
     justify-content: center;
     align-items: center;
     margin: 80px 24px 71px;
+
 }
+
+
 
 .card {
     width: 327px;
@@ -215,6 +232,12 @@ input:checked+.slider:before {
     box-shadow: 0px 20px 40px 0px hsla(234,
             14%,
             74%, .5);
+    transition: transform 0.25s;
+
+}
+
+.card:hover {
+    transform: scale(1.025);
 }
 
 .card:nth-child(2) {
@@ -245,26 +268,8 @@ input:checked+.slider:before {
     margin-top: 24px;
     margin-bottom: 22px;
     gap: 7.5px;
-    animation: animate 1s linear;
 }
 
-@keyframes animate {
-    0% {
-        opacity: 0;
-    }
-
-    25% {
-        opacity: .25;
-    }
-
-    75% {
-        opacity: .75;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 
 .price>h2:first-child {
@@ -293,12 +298,25 @@ input:checked+.slider:before {
     letter-spacing: 1.4px;
 }
 
+.card input:hover {
+    background-image: linear-gradient(-180deg, hsl(237,
+                63%,
+                64%), hsl(237, 63%, 64%));
+}
+
 
 
 .card:nth-child(2) input {
     color: hsl(237, 63%, 64%);
     background-image: unset;
     background-color: white;
+}
+
+.card:nth-child(2) input:hover {
+    background-color: hsl(237, 63%, 64%);
+    color: white;
+    background-color: unset;
+    border: 2px solid white;
 }
 
 
@@ -310,13 +328,84 @@ input:checked+.slider:before {
 
 }
 
-
-@media only screen and (min-width: 500px) {
-    .container {
+@media only screen and (min-width: 850px) {
+    body {
+        line-height: 28px;
         background-image:
-            url('./images/bg-top.svg'), url('./images/bg-bottom.svg');
-        background-position: top right, bottom left;
-        overflow: hidden;
+            url('./images/bg-top.svg'),
+            url('./images/bg-bottom.svg');
+        background-repeat: no-repeat;
+        background-position: top right, left bottom;
+        background-size: auto;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+
+    main {
+        width: 810px;
+        height: 1000px;
+        margin-top: 0;
+        margin: auto;
+    }
+
+    header {
+        margin: 64px 285.5px 0;
+        width: 239px;
+    }
+
+    .cards {
+        display: flex;
+        flex-flow: row wrap;
+        width: 810px;
+        justify-content: center;
+        align-items: center;
+        margin: 64px auto;
+    }
+
+    .card {
+        width: 270px;
+        height: 453px;
+        padding: 31px 15px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 20px 40px 0px hsla(234,
+                14%,
+                74%, .5);
+    }
+
+    .card:nth-child(2) {
+        height: 501px;
+        margin-top: 0;
+        margin-bottom: 0;
+        /* padding: 55px 31px; */
+    }
+
+    .card>div {
+        width: 240px;
+    }
+
+    .card input {
+        width: 240px
+    }
+}
+
+
+@media only screen and (min-width: 1100px) {
+
+    body {
+        line-height: 28px;
+        background-image:
+            url('./images/bg-top.svg'),
+            url('./images/bg-bottom.svg');
+        background-repeat: no-repeat;
+        background-position: top right, left bottom;
+        background-size: auto;
+    }
+
+    h2 {
+        font-size: 72px;
     }
 
     main {
@@ -325,12 +414,12 @@ input:checked+.slider:before {
     }
 
     header {
-        margin: 71px 600px 0;
+        margin: 71px auto 0;
     }
 
     .cards {
         width: 1050px;
-        margin: 64px 195px 103px;
+        margin-top: 64px
     }
 
     .card {
