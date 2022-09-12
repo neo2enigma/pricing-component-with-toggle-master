@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- [Download solution here](https://your-solution-url.com)
-- [Browse live site here](https://your-live-site-url.com)
+- [Download solution here](https://github.com/neo2enigma/pricing-component-with-toggle-master)
+- [Browse live site here](https://neo2enigma.github.io/pricing-component-with-toggle-master/)
 
 ## My process
 
