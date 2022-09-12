@@ -51,9 +51,6 @@ button,
 textarea,
 select {
     font: inherit;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
 }
 
 p,
@@ -76,6 +73,12 @@ h6 {
 Styles
 */
 
+input,
+button {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
 
 .container {
     background-image:
@@ -242,6 +245,25 @@ input:checked+.slider:before {
     margin-top: 24px;
     margin-bottom: 22px;
     gap: 7.5px;
+    animation: animate 1s linear;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: .25;
+    }
+
+    75% {
+        opacity: .75;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 
@@ -286,4 +308,56 @@ input:checked+.slider:before {
     height: 15px;
     margin-left: 50px;
 
+}
+
+
+@media only screen and (min-width: 500px) {
+    .container {
+        background-image:
+            url('./images/bg-top.svg'), url('./images/bg-bottom.svg');
+        background-position: top right, bottom left;
+        overflow: hidden;
+    }
+
+    main {
+        width: 1050px;
+        height: 850px;
+    }
+
+    header {
+        margin: 71px 600px 0;
+    }
+
+    .cards {
+        width: 1050px;
+        margin: 64px 195px 103px;
+    }
+
+    .card {
+        width: 350px;
+        height: 453px;
+        padding: 31px;
+    }
+
+    .card:nth-child(2) {
+        height: 501px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 55px 31px;
+    }
+
+
+    .price {
+        margin-bottom: 32px;
+    }
+
+    .card>div {
+        width: 288px;
+    }
+
+    .card input {
+        appearance: none;
+        margin: 32px auto 0px;
+        width: 288px;
+    }
 }
