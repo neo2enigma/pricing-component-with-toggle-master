@@ -87,10 +87,9 @@ body {
     background-image:
         url('./images/bg-top.svg');
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: auto;
-    /* min-height:  */
-    /* overflow: hidden; */
+    background-position: top -139px right -179px;
+    background-size: 472px 760px;
+    min-height: 100vh;
 }
 
 hr {
@@ -295,6 +294,7 @@ header>div {
     border: 0;
     background-image: linear-gradient(-180deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
     color: white;
+    text-transform: uppercase;
     font-size: 13px;
     line-height: 16px;
     letter-spacing: 1.4px;
@@ -331,8 +331,9 @@ header>div {
             url('./images/bg-top.svg'),
             url('./images/bg-bottom.svg');
         background-repeat: no-repeat;
-        background-position: top right, left bottom;
+        background-position: top right, left bottom -110px;
         background-size: auto;
+        min-height: 100vh;
     }
 
     h2 {
@@ -396,7 +397,7 @@ header>div {
             url('./images/bg-top.svg'),
             url('./images/bg-bottom.svg');
         background-repeat: no-repeat;
-        background-position: top right, left bottom;
+        background-position: top right, left bottom -110px;
         background-size: auto;
     }
 
