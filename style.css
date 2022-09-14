@@ -89,7 +89,8 @@ body {
     background-repeat: no-repeat;
     background-position: top right;
     background-size: auto;
-    overflow: hidden;
+    /* min-height:  */
+    /* overflow: hidden; */
 }
 
 hr {
