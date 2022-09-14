@@ -115,7 +115,14 @@ h2 {
     letter-spacing: -2.16px;
 }
 
-
+.price h2::before {
+    float: left;
+    content: '$';
+    font-weight: 700;
+    font-size: 40px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
 
 main {
     width: 375px;
@@ -262,6 +269,7 @@ header>div {
 }
 
 .price {
+    position: relative;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -271,15 +279,6 @@ header>div {
     gap: 7.5px;
 }
 
-
-
-.price>h2:first-child {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    letter-spacing: -1.2px;
-
-}
 
 .card>div {
     width: 269px;
